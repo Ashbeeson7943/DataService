@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 //connect to MongoDB
-mongoose.connect('mongodb://localhost/testDB');
+mongoose.connect('mongodb://localhost/Test-Data-Service');
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
