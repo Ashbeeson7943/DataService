@@ -22,11 +22,11 @@ router.get('/get/:id', function (req, res, next) {
 
 //CREATE
 router.post('/save', function (req, res, next) {
-    var newData = req.body
-    newData["dataId"] = uuidv4()
-    newData["scenarioId"] = uuidv4()
+    var newData = req.body;
+    newData["dataId"] = uuidv4();
+    newData["scenarioId"] = uuidv4();
     GenericData.create(newData).then(function (dataObject) {
-        res.status(201).send(dataObject)
+        res.status(201).send(dataObject);
     }).catch(next);
 });
 
