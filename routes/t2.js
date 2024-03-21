@@ -21,7 +21,7 @@ router.get('/get/:id', function (req, res, next) {
 });
 
 //CREATE
-router.post('/create', function (req, res, next) {
+router.post('/save', function (req, res, next) {
     var newData = req.body
     newData["dataId"] = uuidv4()
     newData["scenarioId"] = uuidv4()

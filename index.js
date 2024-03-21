@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 
 //init routes
 app.use('/api', require('./routes/api-test'));
+app.use('/api', require('./routes/t2'));
+
 
 //Error Handling
 app.use(function (err, req, res, next) {
@@ -24,5 +26,5 @@ app.use(function (err, req, res, next) {
 
 //Listen for requests
 app.listen(9000 || process.env.port, function () {
-    console.log('Now listening for requests...');
+    console.log('Start Up Complete\nNow listening for requests...');
 });
