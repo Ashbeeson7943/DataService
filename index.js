@@ -11,14 +11,14 @@ mongoose.connect('mongodb://localhost/Test-Data-Service');
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 //init routes
-app.use('/api', require('./routes/api-test'));
-app.use('/api', require('./routes/t2'));
+app.use('/api/generic/v1', require('./routes/genericData'));
 
 
 //Error Handling
-app.use(function (err, req, res) {
+app.use(function (err, req, res, next) {
     res.status(422).send({
         Error: err.message
     });

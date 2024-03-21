@@ -17,9 +17,12 @@ const GenericDataSchema = new Schema({
     customData: {
         type: Object,
         required: [true, 'No data found to save']
+    },
+    createdDate: {
+        type: String
     }
 
-}, { strict: false });
+}, { strict: false, versionKey: false });
 
 const Generic = mongoose.model('GenericDataSet', GenericDataSchema);
 
