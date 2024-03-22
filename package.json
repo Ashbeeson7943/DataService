@@ -4,7 +4,7 @@
   "description": "Service for the creation and storage of test data",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start-test-db": "C:\\\"Program Files\"\\MongoDB\\Server\\7.0\\bin\\mongod.exe",
     "start-service": "nodemon index",
     "lint": "npx eslint --ext .js .",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "eslint": "^8.57.0",
+    "mocha": "^10.3.0",
     "nodemon": "^3.0.3"
   }
 }
