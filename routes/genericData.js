@@ -3,7 +3,6 @@ const router = express.Router();
 const GenericData = require('../models/data');
 const { v4: uuidv4 } = require('uuid');
 
-
 //GET ALL BY Scenario ID
 router.get('/get/scenario/:scenarioId', function (req, res, next) {
     GenericData.find({ scenarioId: req.params.scenarioId }, { _id: 0 }).then(function (dataObject) {
@@ -64,4 +63,4 @@ router.delete('delete/scenario/:scenarioId', function (req, res, next) {
 });
 
 
-module.exports = router;
+export default router;

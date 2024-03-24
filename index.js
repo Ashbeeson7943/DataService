@@ -1,6 +1,6 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+import express from 'express'
+import bodyParser from 'body-parser'
+import mongoose from 'mongoose'
 
 
 //Set up express app
@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 //init routes
-app.use('/api/generic/v1', require('./routes/genericData'));
+import genericRoutes from './routes/genericData'
+app.use('/api/generic/v1', genericRoutes);
 
 
 //Error Handling
@@ -30,7 +31,6 @@ app.listen(9000 || process.env.port, function () {
 });
 
 
-//TODO: Create routes for generic data
 //TODO: Create routes for creating data snippets
 //TODO: potentially look into creating custom datagen?
 

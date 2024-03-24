@@ -29,7 +29,7 @@ describe('Generic Data', function () {
                     throw new Error('Network response was not ok');
                 }
                 // Parse the JSON response
-                assert.equal(response.status, 201)
+                assert.equal(response.status, 201);
                 // return response.json();
             })
             // Use returned data
@@ -43,7 +43,7 @@ describe('Generic Data', function () {
             });
 
 
-    })
+    });
 });
 
 
