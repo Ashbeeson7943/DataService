@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express'
 const router = express.Router();
-const GenericData = require('../models/data');
-const { v4: uuidv4 } = require('uuid');
+import GenericData from '../models/genericDataModel.js'
+
+import { uuid } from 'uuidv4';
 
 //GET ALL BY Scenario ID
 router.get('/get/scenario/:scenarioId', function (req, res, next) {
@@ -23,9 +24,9 @@ router.get('/get/data/:dataId', function (req, res, next) {
 router.post('/save/data', function (req, res, next) {
     var newData = req.body;
     if (newData.scenarioId == '' || newData.scenarioId == undefined) {
-        newData["scenarioId"] = uuidv4();
+        newData["scenarioId"] = uuid;
     }
-    newData["dataId"] = uuidv4();
+    newData["dataId"] = uuid;
     newData["createdDate"] = new Date().toISOString();
     GenericData.create(newData).then(function (dataObject) {
         res.status(201).send({

@@ -1,0 +1,5 @@
+{
+    "passwordLength": 6,
+    "specialCharacters": false,
+    "uppercase": false
+}
