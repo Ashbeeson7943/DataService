@@ -31,17 +31,17 @@ app.use(function (err, req, res, next) {
     });
 });
 
-
-
 //Listen for requests
 app.listen(PORT || process.env.port, function () {
     console.log(`Now listening for requests on port ${PORT}`);
 });
 
-
-
 // TODO: Create routes for creating data snippets
 // TODO: potentially look into creating custom datagen?
 // TODO: Define auth.config.json
 // TODO: Implement auth.config.json
-
+// TODO: Update ReadME
+// TODO: Create Docs
+// TODO: Set up workflows
+// TODO: Write tests
+// TODO: Set up dev env
