@@ -40,6 +40,8 @@ app.listen(PORT || process.env.port, function () {
 
 
 
-//TODO: Create routes for creating data snippets
-//TODO: potentially look into creating custom datagen?
+// TODO: Create routes for creating data snippets
+// TODO: potentially look into creating custom datagen?
+// TODO: Define auth.config.json
+// TODO: Implement auth.config.json
 

@@ -1,9 +1,7 @@
 import express from 'express'
 import User from '../models/userModel.js'
 import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken'
 import * as auth from '../src/authentication.js'
-import envConfig from '../config/env.json' with { type: "json" }
 
 const router = express.Router()
 
@@ -80,6 +78,10 @@ router.post('/login', async function (req, res, next) {
         })
     }
 })
+
+
+// TODO: Create Delete User
+// TODO Create Update User
 
 
 export default router

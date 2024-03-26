@@ -70,5 +70,6 @@ router.delete('delete/scenario/:scenarioId', function (req, res, next) {
 
 });
 
+// TODO: Add Auth protection to routes
 
 export default router;
