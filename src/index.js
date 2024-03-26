@@ -1,19 +1,19 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import cookieParser from 'cookie-parser';
-import connctDB from './dbConnection.js';
+import mongoose from 'mongoose'
 
+const localDB = `mongodb://localhost/Test-Data-Service`
 const PORT = 9000
 
-
+//Init DB
+mongoose.connect(localDB);
+mongoose.Promise = global.Promise;
 
 
 //Set up express app
 const app = express();
 app.use(bodyParser.json());
-app.use(cookieParser)
 app.use(express.urlencoded({ extended: true }));
-
 
 
 //init routes
@@ -31,8 +31,7 @@ app.use(function (err, req, res, next) {
     });
 });
 
-//Init DB
-connctDB()
+
 
 //Listen for requests
 app.listen(PORT || process.env.port, function () {
