@@ -28,3 +28,6 @@ const GenericDataSchema = new Schema({
 const Generic = mongoose.model('GenericData', GenericDataSchema);
 
 export default Generic;
+
+// TODO: Add org info
+// TODO: Add User info

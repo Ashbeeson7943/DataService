@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
+import basicAuth from 'express-basic-auth'
 
 const localDB = `mongodb://localhost/Test-Data-Service`
 const PORT = 9000
@@ -14,6 +15,9 @@ mongoose.Promise = global.Promise;
 const app = express();
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(basicAuth({
+    users: { 'admin': 'admin' }
+}))
 
 
 //init routes
@@ -36,6 +40,7 @@ app.listen(PORT || process.env.port, function () {
     console.log(`Now listening for requests on port ${PORT}`);
 });
 
+// TODO: Update auth to OAuth/Basic?
 // TODO: Create routes for creating data snippets
 // TODO: potentially look into creating custom datagen?
 // TODO: Define auth.config.json
@@ -45,3 +50,9 @@ app.listen(PORT || process.env.port, function () {
 // TODO: Set up workflows
 // TODO: Write tests
 // TODO: Set up dev env
+// TODO: Add UI
+// TODO: Use Tracking tool (jira/etc..)
+// TODO: Set up reporting bugs
+// TODO: Set up feature Requests
+// TODO: Branding (FallenArms)
+// TODO: Set up Social Media (Discord)

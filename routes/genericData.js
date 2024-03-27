@@ -23,25 +23,20 @@ router.get('/get/data/:dataId', function (req, res, next) {
 
 //CREATE DAta
 router.post('/save/data', function (req, res, next) {
-    const validated = authenticateUserRole(req, "Basic")
-    if (validated.status == 202) {
-        var newData = req.body;
-        if (newData.scenarioId == '' || newData.scenarioId == undefined) {
-            newData["scenarioId"] = uuid.uuid();
-        }
-        newData["dataId"] = uuid.uuid();
-        newData["createdDate"] = new Date().toISOString();
-        GenericData.create(newData).then(function (dataObject) {
-            console.log(dataObject);
-            res.status(201).send({
-                "dataId": dataObject.dataId,
-                "scenarioId": dataObject.scenarioId,
-                "dataDescription": dataObject.dataDescription
-            });
-        }).catch(next);
-    } else if (validated.status == 401) {
-        res.status(validated.status).send({ message: validated.message })
+    var newData = req.body;
+    if (newData.scenarioId == '' || newData.scenarioId == undefined) {
+        newData["scenarioId"] = uuid.uuid();
     }
+    newData["dataId"] = uuid.uuid();
+    newData["createdDate"] = new Date().toISOString();
+    GenericData.create(newData).then(function (dataObject) {
+        console.log(dataObject);
+        res.status(201).send({
+            "dataId": dataObject.dataId,
+            "scenarioId": dataObject.scenarioId,
+            "dataDescription": dataObject.dataDescription
+        });
+    }).catch(next);
 });
 
 // //UPDATE
