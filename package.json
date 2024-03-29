@@ -2,12 +2,12 @@
   "name": "dataservice",
   "version": "1.0.0",
   "description": "Service for the creation and storage of test data",
-  "exports": "./src/index.js",
+  "exports": "./src/server.js",
   "type": "module",
   "scripts": {
     "test": "mocha",
     "start-test-db": "C:\\\"Program Files\"\\MongoDB\\Server\\7.0\\bin\\mongod.exe",
-    "start-service": "nodemon ./src/index",
+    "start-service": "nodemon ./src/server",
     "lint": "npx eslint --ext .js .",
     "lint-fix": "npx eslint --fix --ext .js ."
   },

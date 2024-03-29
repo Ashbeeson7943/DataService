@@ -3,7 +3,6 @@ const router = express.Router();
 import GenericData from '../models/genericDataModel.js'
 
 import * as uuid from 'uuidv4';
-import { authenticateUserRole } from '../src/authentication.js';
 
 //GET ALL BY Scenario ID
 router.get('/get/scenario/:scenarioId', function (req, res, next) {
@@ -22,6 +21,7 @@ router.get('/get/data/:dataId', function (req, res, next) {
 });
 
 //CREATE DAta
+// TODO: Add User info
 router.post('/save/data', function (req, res, next) {
     var newData = req.body;
     if (newData.scenarioId == '' || newData.scenarioId == undefined) {
@@ -62,9 +62,6 @@ router.delete('delete/scenario/:scenarioId', function (req, res, next) {
     GenericData.findOneAndDelete({ scenarioId: req.params.scenarioId }).then(function (dataObject) {
         res.status(200).send(`Deleted Scenario: ${dataObject.scenarioId}`);
     }).catch(next);
-
 });
-
-// TODO: Add Auth protection to routes
 
 export default router;

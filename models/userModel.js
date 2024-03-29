@@ -22,10 +22,13 @@ const UserSchema = new Schema({
         default: "Basic",
         required: true,
     },
+    organisation: {
+        type: String,
+        required: true
+    }
 })
 
 const User = mongoose.model("user", UserSchema)
 export default User
 
 //  TODO: Define User
-//  TODO: Define Roles
