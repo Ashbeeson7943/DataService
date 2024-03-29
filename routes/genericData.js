@@ -21,7 +21,6 @@ router.get('/get/data/:dataId', function (req, res, next) {
 });
 
 //CREATE DAta
-// TODO: Add User info
 router.post('/save/data', function (req, res, next) {
     var newData = req.body;
     if (newData.scenarioId == '' || newData.scenarioId == undefined) {
@@ -56,7 +55,7 @@ router.delete('/delete/data/:dataId', function (req, res, next) {
     }).catch(next);
 });
 
-//TODO: DEbug and Fix?
+
 //Delete Scenario
 router.delete('delete/scenario/:scenarioId', function (req, res, next) {
     GenericData.findOneAndDelete({ scenarioId: req.params.scenarioId }).then(function (dataObject) {

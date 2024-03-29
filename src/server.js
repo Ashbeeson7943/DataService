@@ -47,20 +47,3 @@ app.use(function (err, req, res, next) {
 app.listen(PORT || process.env.port, function () {
     console.log(`Now listening for requests on port ${PORT}`);
 });
-
-// TODO: Create routes for creating data snippets
-// TODO: potentially look into creating custom datagen?
-// TODO: Define auth.config.json
-// TODO: Implement auth.config.json
-// TODO: Update ReadME
-// TODO: Create Docs
-// TODO: Set up workflows
-// TODO: Write tests
-// TODO: Set up dev env
-// TODO: Add UI
-// TODO: Use Tracking tool (jira/etc..)
-// TODO: Set up reporting bugs
-// TODO: Set up feature Requests
-// TODO: Branding (FallenArms)
-// TODO: Set up Social Media
-// TODO: Update Discord Server

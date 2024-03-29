@@ -29,4 +29,3 @@ const Generic = mongoose.model('GenericData', GenericDataSchema);
 
 export default Generic;
 
-// TODO: Add org info

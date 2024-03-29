@@ -1,4 +1,3 @@
-// TODO: ADD Data Creation functions i.e Phone Numbers, customers, text etc..
 
 export function generateRandomCustomer() {
     // Arrays of possible values for generating random details
