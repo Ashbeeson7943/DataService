@@ -37,15 +37,3 @@ dataForm.addEventListener("submit", (submittedEvent) => {
     saveGenericData(payload)
 
 })
-
-
-// Payload
-/*
-
-{
-  "dataDescription":"Hello",
-  "customData":{},
-  "scenarioId": "6ae568de-2950-41b3-999e-893626d747e8"
-}
-
-*/
