@@ -1,5 +1,9 @@
 name: Production Release
 on: 
+  workflow_dispatch:
+    inputs:
+      run-desc:
+        description: "Run description"
   push:
     branches:
       - main
