@@ -14,7 +14,7 @@ router.get('/get/scenario/:scenarioId', function (req, res, next) {
 
 //GET ONE by Data ID
 router.get('/get/data/:dataId', function (req, res, next) {
-    GenericData.find({ dataId: req.params.dataId }).then(function (dataObject) {
+    GenericData.find({ dataId: req.params.dataId }, { _id: 0 }).then(function (dataObject) {
         res.status(200).send(dataObject);
     }).catch(next);
 
@@ -29,7 +29,6 @@ router.post('/save/data', function (req, res, next) {
     newData["dataId"] = uuid.uuid();
     newData["createdDate"] = new Date().toISOString();
     GenericData.create(newData).then(function (dataObject) {
-        console.log(dataObject);
         res.status(201).send({
             "dataId": dataObject.dataId,
             "scenarioId": dataObject.scenarioId,
