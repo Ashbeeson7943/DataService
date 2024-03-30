@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Register</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/styles/styles.css" />
+    
+  </head>
+  <body>
+    <h1>Data Register</h1>
+
+    <form action="" id="dataSaveForm">
+        <label for="descLabel" >Enter a description for the data: </label>
+        <input type="text" name="desc" id="desc" required oninvalid="this.setCustomValidity('Please Enter a Description Here')" oninput="this.setCustomValidity('')">
+        <br>
+        <label for="dataLabel" >Your JSON data here -> </label>
+        <input type="text" name="data" id="data" required oninvalid="this.setCustomValidity('Please Enter your data Here')" oninput="this.setCustomValidity('')">
+        <br>
+        <input type="submit" value="Save">
+    </form>
+
+    <div id="dataViewer"></div>
+
+    <a href="./dataStoragePage.html">Go To Storage</a>
+
+    <script async src="/js/dataRegister.js"></script>
+  </body>
+</html>

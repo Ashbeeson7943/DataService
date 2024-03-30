@@ -3,25 +3,27 @@
   <head>
     <title>Data Storage</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
     
   </head>
   <body>
     <h1>Data Storage</h1>
 
     <form action="" id="dataSearchForm">
-        <label for="fieldIdLabel">Enter Data/Scenario Id: </label>
+        <label for="fieldIdLabel">Enter Data / Scenario Id: </label>
         <select name="dataType" id="dataType">
             <option value="data">Data</option>
             <option value="scenario">Scenario</option>
         </select>
-        <input type="text" name="fieldId" id="fieldId" required oninvalid="this.setCustomValidity('Enter ID Here')">
+        <input type="text" name="fieldId" id="fieldId" required oninvalid="this.setCustomValidity('Please Enter a valid ID Here')" oninput="this.setCustomValidity('')">
         <input type="submit" value="Search">
     </form>
 
     <div id="dataViewer"></div>
 
+    <a href="./dataRegisterPage.html">Go To Register</a>
 
-    <script async src="./js/dataStorageViewer.js"></script>
+
+    <script async src="../js/dataStorage.js"></script>
   </body>
 </html>

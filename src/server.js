@@ -24,16 +24,13 @@ const app = express();
 app.use(express.static('./src/website'))
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(basicAuth({
-    users: { 'admin': 'admin' }
-}))
-
+// app.use(basicAuth({
+//     users: { 'admin': 'admin' }
+// }))
 
 //init routes
 import genericRoutes from '../routes/genericData.js'
 app.use('/api/generic/v1', genericRoutes);
-
-
 
 
 //Error Handling

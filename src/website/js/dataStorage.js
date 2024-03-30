@@ -1,12 +1,13 @@
 
+
 let auth = btoa('admin:admin')
 
 function getDataByDataId(dataId) {
     if (dataId != undefined || '') {
         fetch(`http://localhost:9000/api/generic/v1/get/data/${dataId}`, {
-            headers: {
-                'Authorization': `Basic ${auth}`
-            }
+            // headers: {
+            //     'Authorization': `Basic ${auth}`
+            // }
         }).then(function (dataObject) {
             if (dataObject.status == 200) {
                 return dataObject.json()
@@ -46,9 +47,9 @@ function dataNotFound(id) {
     document.getElementById('dataViewer').innerHTML = JSON.stringify({ message: `Information not found with ID: ${id}` })
 }
 
-let loginForm = document.getElementById("dataSearchForm");
+let dataSearchForm = document.getElementById("dataSearchForm");
 
-loginForm.addEventListener("submit", (submittedEvent) => {
+dataSearchForm.addEventListener("submit", (submittedEvent) => {
     submittedEvent.preventDefault()
 
     let dataType = document.getElementById('dataType').value

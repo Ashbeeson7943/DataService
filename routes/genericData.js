@@ -23,6 +23,7 @@ router.get('/get/data/:dataId', function (req, res, next) {
 //CREATE DAta
 router.post('/save/data', function (req, res, next) {
     var newData = req.body;
+    console.log(newData)
     if (newData.scenarioId == '' || newData.scenarioId == undefined) {
         newData["scenarioId"] = uuid.uuid();
     }
