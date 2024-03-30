@@ -21,7 +21,7 @@ mongoose.Promise = global.Promise;
 
 //Set up express app
 const app = express();
-app.use(express.static('./src/website'))
+app.use(express.static('./src/website/pages/'))
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(basicAuth({
