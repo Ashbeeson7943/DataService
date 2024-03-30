@@ -1,0 +1,11 @@
+name: Production Release
+on: 
+  push:
+    branches:
+      - main
+
+jobs: 
+  Create_Release:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world"
