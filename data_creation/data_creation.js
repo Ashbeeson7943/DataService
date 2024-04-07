@@ -23,14 +23,13 @@ export function generateRandomCustomer() {
         street: street,
         postcode: postcode,
         phoneNumber: generateRandomPhoneNumber('UK')
-
     };
 
-    return JSON.stringify(customer);
+    return customer;
 }
 
 
-export function generateRandomPhoneNumber(countryCode) {
+export function generateRandomPhoneNumber(countryCode, json = false) {
     let phoneNumber = '';
     if (countryCode === 'UK') {
         // Generate a random UK phone number
@@ -46,34 +45,11 @@ export function generateRandomPhoneNumber(countryCode) {
     } else {
         phoneNumber = 'Invalid country code';
     }
-    return phoneNumber;
-}
 
-function generatePigLatin(length, minWordLength, maxWordLength) {
-    const vowels = ['a', 'e', 'i', 'o', 'u'];
-    const consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
-    const allCharacters = [...vowels, ...consonants];
-    let text = '';
-
-    while (text.length < length) {
-        const wordLength = Math.floor(Math.random() * (maxWordLength - minWordLength + 1)) + minWordLength;
-        let word = '';
-
-        for (let i = 0; i < wordLength; i++) {
-            const firstChar = allCharacters[Math.floor(Math.random() * allCharacters.length)];
-            const secondChar = allCharacters[Math.floor(Math.random() * allCharacters.length)];
-
-            if (vowels.includes(firstChar)) {
-                word += firstChar.toUpperCase() + secondChar;
-            } else {
-                word += secondChar.toUpperCase() + firstChar;
-            }
-        }
-
-        text += word + 'ay ';
+    if (json) {
+        return { number: phoneNumber }
+    } else {
+        return phoneNumber;
     }
-
-    return text.trim();
 }
 
-console.log(generatePigLatin(100, 4, 8))

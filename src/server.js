@@ -30,7 +30,10 @@ app.use(express.urlencoded({ extended: true }));
 
 //init routes
 import genericRoutes from '../routes/genericData.js'
-app.use('/api/generic/v1', genericRoutes);
+import genericGeneratorRoutes from '../routes/genericGenerator.js'
+const apiPath = '/api/generic/v1'
+app.use(apiPath, genericRoutes);
+app.use(apiPath, genericGeneratorRoutes);
 
 
 //Error Handling
