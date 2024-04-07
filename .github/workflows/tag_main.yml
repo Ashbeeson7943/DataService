@@ -1,11 +1,11 @@
-name: Tag Main
+name: Release Main
 on: 
   push:
     branches:
       - main
 
 jobs: 
-  Tag_Main:
+  Release_Main:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
