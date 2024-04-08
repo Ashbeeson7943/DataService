@@ -1,5 +1,4 @@
 body {
-    text-align: center;
     font-family: Helvetica;
     background-color: #2a3439;
     color: #D4AF37;
@@ -16,9 +15,58 @@ input {
 }
 
 a:link{
-  color: hotpink;
+  color: #990000;
 }
 
 a:visited{
-  color: hotpink;
+  color: #990000;
+}
+
+
+/* Remove default bullets */
+ul, #customerDetails {
+  list-style-type: none;
+}
+
+/* Remove margins and padding from the parent ul */
+#customerDetails {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the caret/arrow */
+.caret {
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.inline-block {
+  display: inline-block;
 }

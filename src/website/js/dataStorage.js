@@ -1,6 +1,6 @@
 
 
-let auth = btoa('admin:admin')
+let auth = btoa('admin:admin');
 
 function getDataByDataId(dataId) {
     if (dataId != undefined || '') {
@@ -10,19 +10,19 @@ function getDataByDataId(dataId) {
             // }
         }).then(function (dataObject) {
             if (dataObject.status == 200) {
-                return dataObject.json()
-            } else dataObject.status
+                return dataObject.json();
+            } else dataObject.status;
         }).then(function (data) {
-            console.log(data)
+            console.log(data);
             if (data != undefined || data != 232) {
                 if (data[0] != undefined) {
-                    document.getElementById('dataViewer').innerHTML = JSON.stringify(data[0])
+                    document.getElementById('dataViewer').innerHTML = JSON.stringify(data[0]);
                 }
             } else {
-                dataNotFound(dataId)
+                dataNotFound(dataId);
             }
-        })
-    } else document.getElementById('dataViewer').innerHTML = JSON.stringify({ message: `Please enter an ID` })
+        });
+    } else document.getElementById('dataViewer').innerHTML = JSON.stringify({ message: `Please enter an ID` });
 }
 
 function getDataByScenarioId(scenarioId) {
@@ -32,36 +32,36 @@ function getDataByScenarioId(scenarioId) {
         }
     }).then(function (dataObject) {
         if (dataObject.status == 200) {
-            return dataObject.json()
+            return dataObject.json();
         }
     }).then(function (data) {
         if (data[0] != undefined) {
-            document.getElementById('dataViewer').innerHTML = JSON.stringify(data)
+            document.getElementById('dataViewer').innerHTML = JSON.stringify(data);
         } else {
-            dataNotFound(scenarioId)
+            dataNotFound(scenarioId);
         }
-    })
+    });
 }
 
 function dataNotFound(id) {
-    document.getElementById('dataViewer').innerHTML = JSON.stringify({ message: `Information not found with ID: ${id}` })
+    document.getElementById('dataViewer').innerHTML = JSON.stringify({ message: `Information not found with ID: ${id}` });
 }
 
 let dataSearchForm = document.getElementById("dataSearchForm");
 
 dataSearchForm.addEventListener("submit", (submittedEvent) => {
-    submittedEvent.preventDefault()
+    submittedEvent.preventDefault();
 
-    let dataType = document.getElementById('dataType').value
-    let id = document.getElementById('fieldId').value
+    let dataType = document.getElementById('dataType').value;
+    let id = document.getElementById('fieldId').value;
     switch (dataType) {
         case 'data':
-            getDataByDataId(id)
+            getDataByDataId(id);
             break;
         case 'scenario':
-            getDataByScenarioId(id)
-            break
+            getDataByScenarioId(id);
+            break;
     }
 
-})
+});
 

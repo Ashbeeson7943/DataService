@@ -7,33 +7,33 @@ function saveGenericData(payload) {
         method: 'POST',
         body: JSON.stringify(payload)
     }).then(function (dataObject) {
-        console.log(dataObject)
+        console.log(dataObject);
         if (dataObject.status == 201) {
-            return dataObject.json()
-        } else return undefined
+            return dataObject.json();
+        } else return undefined;
     }).then(function (data) {
         if (data != undefined) {
-            document.getElementById('dataViewer').innerHTML = JSON.stringify(data)
+            document.getElementById('dataViewer').innerHTML = JSON.stringify(data);
         } else {
-            document.getElementById('dataViewer').innerHTML = JSON.stringify({ message: 'something went wrong' })
+            document.getElementById('dataViewer').innerHTML = JSON.stringify({ message: 'something went wrong' });
         }
-    })
+    });
 }
 
 let dataForm = document.getElementById("dataSaveForm");
 
 dataForm.addEventListener("submit", (submittedEvent) => {
-    submittedEvent.preventDefault()
+    submittedEvent.preventDefault();
 
-    let desc = document.getElementById('desc').value
-    let data = document.getElementById('data').value
+    let desc = document.getElementById('desc').value;
+    let data = document.getElementById('data').value;
 
     let payload = {
         dataDescription: desc,
         customData: data
-    }
+    };
 
-    console.log(payload)
-    saveGenericData(payload)
+    console.log(payload);
+    saveGenericData(payload);
 
-})
+});
