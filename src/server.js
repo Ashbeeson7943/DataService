@@ -35,14 +35,6 @@ const apiPath = '/api/generic/v1'
 app.use(apiPath, genericRoutes);
 app.use(apiPath, genericGeneratorRoutes);
 
-
-//Error Handling
-app.use(function (err, req, res, next) {
-    res.status(422).send({
-        Error: err.message
-    });
-});
-
 //Listen for requests
 app.listen(PORT || process.env.port, function () {
     console.log(`Now listening for requests on port ${PORT}`);

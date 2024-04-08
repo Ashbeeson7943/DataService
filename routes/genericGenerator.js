@@ -11,8 +11,9 @@ router.get('/get/generator/:dataType', function (req, res, next) {
             break
         case 'number':
             res.status(200).send(getReturnMessage(dataType, generateRandomPhoneNumber('UK', true)))
+            break;
         default:
-            res.status(400).send({ message: `No valid data generation type selected: Sent data type -> ${req.params.dataType}` })
+            res.status(400).send({ message: `No valid data generation type selected: Sent data type -> ${dataType}` })
     }
 
 });

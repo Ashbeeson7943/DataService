@@ -1,9 +1,24 @@
 body {
     text-align: center;
-    background-color: #f0e8c6;
-  }
+    font-family: Helvetica;
+    background-color: #2a3439;
+    color: #D4AF37;
+}
   
-  div {
+div {
     margin-top: 15px;
-  }
+}
   
+input {
+    background-color: #2F4F4F;
+    color: #D4AF37;
+    accent-color: #990000;
+}
+
+a:link{
+  color: hotpink;
+}
+
+a:visited{
+  color: hotpink;
+}

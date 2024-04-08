@@ -33,8 +33,8 @@ export function generateRandomPhoneNumber(countryCode, json = false) {
     let phoneNumber = '';
     if (countryCode === 'UK') {
         // Generate a random UK phone number
-        const areaCode = Math.floor(Math.random() * (199 - 100 + 1)) + 100;
-        const localNumber = Math.floor(Math.random() * 89999999) + 10000000;
+        const areaCode = Math.floor(Math.random() * (1999 - 1000 + 1)) + 100;
+        const localNumber = Math.floor(Math.random() * 899999) + 100000;
         phoneNumber = `0${areaCode}${localNumber}`;
     } else if (countryCode === 'US') {
         // Generate a random US phone number
