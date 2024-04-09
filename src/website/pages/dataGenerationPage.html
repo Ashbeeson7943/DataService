@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Data Creation</h1>
-
-    <div>
-        <a href="./homepage.html">Go To Home</a>
+    <!-- Side navigation -->
+    <div id="sideBar"></div>
+  <div class="main">
+      <h1>Data Creation</h1>
+      <div>
+          <button id="cust">Generate Customer</button> 
+          <button id="numb">Generate Phone Number</button>
+          <div id="display"></div>
+      </div>
     </div>
-    <div>
-        <button id="cust">Get Customer</button> 
-        <button id="numb">Get Number</button>
-        <div id="display"></div>
-    </div>
-
+    <script async src="../js/webUtils.js"></script>
     <script async src="../js/dataGenerator.js"></script>
   </body>
 </html>
