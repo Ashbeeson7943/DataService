@@ -64,6 +64,14 @@ function prettifyJSONData(dataType, json) {
                                 <li class="center">Postcode: ${json.data.postcode}</li>
                             </ul>
                         </li>
+                        <li><span class="caret bold">Card Information</span>
+                            <ul class="nested">
+                                <li class="center">Type: ${json.data.cardDetails.cardType}</li>
+                                <li class="center">Number: ${json.data.cardDetails.cardNumber}</li>
+                                <li class="center">Exipry Date: ${json.data.cardDetails.expirationDate}</li>
+                                <li class="center">cvv: ${json.data.cardDetails.cvv}</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -80,25 +88,9 @@ function enableNestedProperties() {
     let i;
 
     for (i = 0; i < toggler.length; i++) {
-        console.log(i)
         toggler[i].addEventListener("click", function () {
             this.parentElement.querySelector(".nested").classList.toggle("active");
             this.classList.toggle("caret-down");
         });
     }
 }
-
-/*
-{
-  "message": "Returning data based on type customer",
-  "data": {
-    "firstName": "James",
-    "lastName": "Moore",
-    "age": 63,
-    "city": "Sheffield",
-    "street": "Queens Road",
-    "postcode": "12 7AA",
-    "phoneNumber": "0873834669"
-  }
-}
-*/
