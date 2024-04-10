@@ -8,24 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <!-- Side navigation -->
+    <div id="sideBar"></div>
+  <div class="main">
     <h1>Data Registration</h1>
 
     <form action="" id="dataSaveForm">
         <label for="descLabel" >Enter a description for the data: </label>
-        <input type="text" name="desc" id="desc" required oninvalid="this.setCustomValidity('Please Enter a Description Here')" oninput="this.setCustomValidity('')">
+        <textarea type="text" name="desc" id="desc" required oninvalid="this.setCustomValidity('Please Enter a Description Here')" oninput="this.setCustomValidity('')"></textarea>
         <br>
         <label for="dataLabel" >Your JSON data here -> </label>
-        <input type="text" name="data" id="data" required oninvalid="this.setCustomValidity('Please Enter your data Here')" oninput="this.setCustomValidity('')">
+        <textarea type="text" name="data" id="data" required oninvalid="this.setCustomValidity('Please Enter your data Here')" oninput="this.setCustomValidity('')"></textarea>
         <br>
         <input type="submit" value="Save">
     </form>
 
     <div id="dataViewer"></div>
-
-    <a href="./dataStoragePage.html">Go To Storage</a>
-    <br>
-    <a href="./homepage.html">To Home</a>
-
+  </div>
+    <script async src="../js/webUtils.js"></script>
     <script async src="/js/dataRegister.js"></script>
   </body>
 </html>
