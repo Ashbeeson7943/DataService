@@ -16,15 +16,6 @@ const UserSchema = new Schema({
     email: {
         type: String,
         required: true
-    },
-    role: {
-        type: String,
-        default: "Basic",
-        required: true,
-    },
-    organisation: {
-        type: String,
-        required: true
     }
 })
 
