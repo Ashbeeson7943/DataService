@@ -28,10 +28,13 @@ router.post('/user/register', function (req, res, next) {
 
 
 router.get('/user/login', async function (req, res, next) {
-    let userDetails = req.body
+    let userDetails = {
+        username: req.query.uname,
+        password: req.query.pwd
+    }
     const dbUser = await UserModel.findOne({ username: userDetails.username }, { _id: 0 })
     if (dbUser != null) {
-        const matchedPassword = await bcrypt.compare(userDetails.password, dbUser.password)
+        const matchedPassword = bcrypt.compare(userDetails.password, dbUser.password)
         if (matchedPassword) {
             res.status(200).cookie("authToken", "valid", { maxAge: 90000, secure: true }).send()
         } else {
@@ -40,6 +43,19 @@ router.get('/user/login', async function (req, res, next) {
     } else {
         res.status(401).send(getMessage('details incorrect'))
     }
+})
+
+
+router.get('/user/validateToken', function (req, res, next) {
+    if (authCheck(req.cookies)) {
+        res.status(200).send()
+    } else {
+        res.status(401).send()
+    }
+})
+
+router.get('/user/logout', function (req, res, next) {
+    res.status(201).clearCookie('authToken').send()
 })
 
 export default router
