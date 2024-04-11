@@ -71,10 +71,6 @@ ul, #customerDetails {
   display: inline-block;
 }
 
-#login {
-  top: 120px; 
-}
-
 #register {
   top: 50px; 
 }
