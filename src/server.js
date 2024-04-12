@@ -1,34 +1,27 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import mongoose from 'mongoose'
-import basicAuth from 'express-basic-auth'
 import cookieParser from 'cookie-parser'
-// import UserModel from '../models/userModel.js'
-
-const localDB = `mongodb://localhost/Test-Data-Service`
-const PORT = 9000
-
-//Init DB
-mongoose.connect(localDB);
-mongoose.Promise = global.Promise;
-// let credentials = await UserModel.find({}).then(function (users) {
-//     let details = []
-//     users.forEach(user => {
-//         details.push(`\'${user.username}\':\'${user.password}\'`)
-//     });
-//     return details
-// })
-// console.log(credentials)
+import mongoose from 'mongoose'
 
 //Set up express app
 const app = express();
+
+//Init DB
+mongoose.Promise = global.Promise;
+const options = {
+    autoIndex: false, // Don't build indexes
+    maxPoolSize: 10, // Maintain up to 10 socket connections
+};
+console.log('##########')
+console.log(process.env.MONGODB_URI)
+console.log('##########')
+await mongoose.connect(process.env.MONGODB_URI, options)
+
 app.use(cookieParser())
 app.use(express.static('./src/website'))
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(basicAuth({
-//     users: { 'admin': 'admin' }
-// }))
+
 
 //init routes
 import genericRoutes from '../routes/genericData.js'
@@ -40,7 +33,10 @@ app.use(apiPath, genericRoutes);
 app.use(apiPath, genericGeneratorRoutes);
 app.use(apiPath, userRoutes);
 
+const PORT = process.env.PORT
+// const PORT = 9000
+
 //Listen for requests
-app.listen(PORT || process.env.port, function () {
+app.listen(PORT, function () {
     console.log(`Now listening for requests on port ${PORT}`);
 });

@@ -8,6 +8,7 @@
     "test": "mocha",
     "start-test-db": "C:\\\"Program Files\"\\MongoDB\\Server\\7.0\\bin\\mongod.exe",
     "start-service-dev": "nodemon ./src/server",
+    "start-service": "node ./src/server",
     "lint": "npx eslint --ext .js .",
     "lint-fix": "npx eslint --fix --ext .js ."
   },
